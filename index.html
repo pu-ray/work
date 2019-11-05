@@ -1,0 +1,127 @@
+<! DOCTYPE html>
+<html lang = "en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+ <div class ="preload" id ="preload">
+	<div class = "loading" >
+		<span>Loading....</span>
+	</div>
+
+</div>
+
+<style>
+		body{
+		margin: 0;
+		padding: 0;
+		background: #34495e;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "montserrat", sans-serif;
+	}
+	.Loading{
+		width: 200px;
+		height: 200px;
+		box-sizing: border-box;
+		border-radius: 50%;
+		border-top: 10px solid #e74c3c;
+		position: relative;
+		animation: a1 2s linear infinite;
+	}
+	.Loading::before,.Loading::after{
+		content: "";
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		left: 0;
+		top: -10px;
+		box-sizing: border-box;
+		border-radius: 50%;
+	}
+	.Loading::before{
+		border-top: 10px solid #e67e22;
+		transform: rotate(120deg);
+		
+	}
+	.Loading::after{
+		border-top: 10px solid #3498db;
+		transform: rotate(240deg);
+		}
+	.Loading span{
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		color: #fff;
+		text-align: center;
+		line-height: 200px;
+		animation: a2 2s linear infinite;
+		animation: a2 2s linear 3;
+	}
+	@keyframes a1 {
+		from{transform:rotate(0deg);}
+		to{
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes a2 {
+		from{transform:rotate(0deg);}
+		to{
+			transform: rotate(-360deg);
+		}
+	}
+	@keyframes fadeout{
+		from{opacity: 1;}
+		to{opacity:0;}
+	}
+
+</style>
+	<script type="text/javascript">
+		(function(){
+
+			
+			var preload = document.getElementById("preload");
+			var loading = 0;
+			var id = setInterval(frame, 500);
+
+
+			function frame() {
+				
+				
+			if(loading == 50) {
+				
+				clearInterval(id);
+				window.open("home.html", "_self");
+
+			} else {
+
+				loading = loading +5;
+
+				if(loading == 50) {
+
+	              preload.style.annimation = "fadeout is ease";
+
+				}
+
+			}
+			
+		}
+
+})();
+	</script>
+
+</body>
+</html>
+
+
+
+	
